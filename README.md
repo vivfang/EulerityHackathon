@@ -8,8 +8,8 @@ Given a URL that points to a business’s website (or Facebook or Yelp page), re
 Please note that there are some 3rd party APIs that provide this functionality (such as clearbit), however we’re interested in seeing the various strategies you’ll use to craft your custom solution.
 
 ## Some hints to get you started:
-1.Open Graph meta tags may provide useful information
-1.Yelp and Facebook pages often contain references to business websites
-1.Jsoup is a great HTML parsing library
+ 1. Open Graph meta tags may provide useful information
+ 1. Yelp and Facebook pages often contain references to business websites
+ 1. Jsoup is a great HTML parsing library
 
 
