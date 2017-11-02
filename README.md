@@ -12,8 +12,9 @@ Given a URL that points to a business’s website, return a URL pointing to the 
 
 Please note that there are some 3rd party APIs that provide this functionality, however we’re interested in seeing the various strategies you’ll use to craft your custom solution.
 
+## Your solution
+ 1. A jar file (with source attached)
+
 ## Some hints to get you started:
  1. Open Graph meta tags may provide useful information
  1. Jsoup is a great HTML parsing library
-
-
