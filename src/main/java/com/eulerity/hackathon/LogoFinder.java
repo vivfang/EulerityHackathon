@@ -8,6 +8,24 @@ import java.io.FileWriter;
 public class LogoFinder {
 
 	/**
+	 * Given a business's URL, returns a URL pointing to the logo of the business
+	 *  
+	 * @param url of business's site
+	 * @return url of business's logo
+	 * @throws Exception
+	 */
+	public static String findLogoUrl(String url) throws Exception {
+
+		//
+		//   YOUR CODE HERE!
+		//
+		//
+		
+		return url + "/logo.png";
+	}
+	
+	
+	/**
 	 * Prefer to not edit this method.
 	 *
 	 * The only rules here are that you:
@@ -41,23 +59,6 @@ public class LogoFinder {
 		reader.close();
 		writer.close();
 		System.out.println("Generated file:" + outputFilename);
-	}
-	
-	/**
-	 * Given a business's URL, returns a URL pointing to the logo of the business
-	 *  
-	 * @param url of business's site
-	 * @return url of business's logo
-	 * @throws Exception
-	 */
-	public static String findLogoUrl(String url) throws Exception {
-
-		//
-		//   YOUR CODE HERE!
-		//
-		//
-		
-		return url + "/logo.png";
 	}
 
 }
