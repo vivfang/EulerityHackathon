@@ -9,7 +9,15 @@ public class LogoFinder {
 
 	/**
 	 * Given a business's URL, returns a URL pointing to the logo of the business
-	 *  
+	 * 
+	 * You can use third party APIs as long as they don't provide a direct solution to the problem.
+	 *
+	 * For example, you can use Yelp's Fusion API to find business details, but you can not use an API 
+	 * which takes a URL (or domain) and returns a logo image.
+	 * 
+	 * Feel free to create any packages or classes you'd like. Additionally, you can import any open source
+	 * libraries you like.
+	 * 
 	 * @param url of business's site
 	 * @return url of business's logo
 	 * @throws Exception
@@ -29,9 +37,9 @@ public class LogoFinder {
 	 * Prefer to not edit this method.
 	 *
 	 * The only rules here are that you:
-	 *  1 - follow the file naming convention
+	 *
+	 *  1 - Follow the output file naming convention
 	 *  2 - Output a reasonably valid HTML file so we can review your work.
-	 * 
 	 *
 	 */
 	public static void main(String[] args) throws Exception {
@@ -58,7 +66,7 @@ public class LogoFinder {
 		writer.write("</body></html>");
 		reader.close();
 		writer.close();
-		System.out.println("Generated file:" + outputFilename);
+		System.out.println(String.format("\n\nGenerated file:\n\n%s\n\n", outputFilename));
 	}
 
 }
