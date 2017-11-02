@@ -7,6 +7,15 @@ import java.io.FileWriter;
 
 public class LogoFinder {
 
+	/**
+	 * Prefer to not edit this method.
+	 *
+	 * The only rules here are that you:
+	 *  1 - follow the file naming convention
+	 *  2 - Output a reasonably valid HTML file so we can review your work.
+	 * 
+	 *
+	 */
 	public static void main(String[] args) throws Exception {
 		if (args.length != 1) {
 			throw new Exception("Please provide an input file.");
