@@ -22,9 +22,6 @@ Please note that there are some 3rd party APIs that provide this functionality, 
 
 
 ## Your submission
- 1. A jar file
+ 1. An executable jar file
  1. A source jar file
- 1. We will run "java -cp <pathtojar> com.eulerity.hackathon.App url1 url2 url3" on the command line
- 
-
  
