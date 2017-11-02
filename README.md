@@ -22,6 +22,5 @@ Please note that there are some 3rd party APIs that provide this functionality, 
 
 
 ## Your submission
- 1. An executable jar file
- 1. A source jar file
- 
+ 1. An executable jar file with source
+ 1. We will run "java -jar /path/to/your/file.jar /path/to/input.txt" and compare your results. 

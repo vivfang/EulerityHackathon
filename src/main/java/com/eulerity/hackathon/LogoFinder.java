@@ -5,38 +5,49 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-/**
- * Hello world!
- *
- */
-public class App {
+public class LogoFinder {
+
 	public static void main(String[] args) throws Exception {
 		if (args.length != 1) {
 			throw new Exception("Please provide an input file.");
 		}
 		String inputFilename = args[0];
-		String outputFilename = String.format("%s_%d_output.tsv", inputFilename, System.currentTimeMillis());
+		String outputFilename = String.format("%s_%d_output.html", inputFilename, System.currentTimeMillis());
 		BufferedReader reader = new BufferedReader(new FileReader(inputFilename));
 		BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilename));
+		writer.write("<html><head></head><body>");
 		String line;
 		while ((line = reader.readLine()) != null) {
 			String url = line.trim();
-			writer.write(url);
-			writer.write("\t");
+			String resolved;
 			try {
-				writer.write(findLogoUrl(url));
+				resolved = String.format("<img src=\"%s\">", findLogoUrl(url));
 			} catch (Exception e) {
-				writer.write("Error:" + e.getMessage());
+				resolved = "Error:" + e.getMessage();
 			}
-			writer.write("\n");
+
+			writer.write(String.format("<p>%s %s</p>\n", url, resolved));
 		}
+		writer.write("</body></html>");
 		reader.close();
 		writer.close();
 		System.out.println("Generated file:" + outputFilename);
 	}
 	
-	public static String findLogoUrl(String url) {
-		// Your code here
+	/**
+	 * Given a business's URL, returns a URL pointing to the logo of the business
+	 *  
+	 * @param url of business's site
+	 * @return url of business's logo
+	 * @throws Exception
+	 */
+	public static String findLogoUrl(String url) throws Exception {
+
+		//
+		//   YOUR CODE HERE!
+		//
+		//
+		
 		return url + "/logo.png";
 	}
 
