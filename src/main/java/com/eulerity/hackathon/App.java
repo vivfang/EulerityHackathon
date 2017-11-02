@@ -1,4 +1,4 @@
-package com.eulerity.hackathon2;
+package com.eulerity.hackathon;
 
 /**
  * Hello world!
