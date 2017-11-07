@@ -6,7 +6,6 @@ We’re looking for a Java intern, and are interested in finding someone that is
  1. You must be a full time student
  1. Your code must be written in Java
  1. Bring a laptop and charger (power strips will be provided)
- 1. Create a github account
  1. While not required for the hackathon, things may go more smoothly if you have Maven and Eclipse installed (also install Maven plugins for Eclipse)
  
 ## Problem
