@@ -50,23 +50,31 @@ public class LogoFinder {
 		String outputFilename = String.format("%s_%d_output.html", inputFilename, System.currentTimeMillis());
 		BufferedReader reader = new BufferedReader(new FileReader(inputFilename));
 		BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilename));
-		writer.write("<html><head></head><body>");
+		writer.write(HTML_HEAD);
 		String line;
 		while ((line = reader.readLine()) != null) {
 			String url = line.trim();
 			String resolved;
 			try {
-				resolved = String.format("<img src=\"%s\">", findLogoUrl(url));
+				resolved = findLogoUrl(url);
 			} catch (Exception e) {
 				resolved = "Error:" + e.getMessage();
 			}
 
-			writer.write(String.format("<p>%s %s</p>\n", url, resolved));
+			writer.write(String.format(ROW_FMT, url, resolved, resolved));
 		}
-		writer.write("</body></html>");
+		writer.write(HTML_TAIL);
 		reader.close();
 		writer.close();
 		System.out.println(String.format("\n\nGenerated file:\n\n%s\n\n", outputFilename));
 	}
 
+	private static final String ROW_FMT = "<tr><td>%s</td><td>%s</td><td><img src=\"%s\"></td></tr>";
+	
+	private static final String HTML_HEAD = "<html><head></head><body>\n" + 
+			"<table>\n" + 
+			"<thead><tr><th>Business URL</th><th>Logo URL</th><th>Logo</th></tr></thead>\n" + 
+			"<tbody>";
+
+	private static final String HTML_TAIL = "</tbody></body></html>";
 }
