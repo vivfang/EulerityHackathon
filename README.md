@@ -13,7 +13,7 @@ Given a URL that points to a business’s website, return a URL pointing to the 
 ## Getting started:
  1. From Eclipse, choose File:Import:Projects from Git:Clone URI
  1. From command line, navigate to the directory where you imported the project and type 'mvn package'. That will build a binary jar and a source jar in a directory called 'target'
- 1. Run "java -jar /path/to/your/file.jar /path/to/input.txt" to generate the results file (which will be of the format /path/to/input.txt_<timestamp>.html)
+ 1. Run "java -jar /path/to/your/file.jar /path/to/input.txt" to generate the results file (which will be of the format /path/to/input.txt_timestamp_output.html)
  1. Open the resulting HTML file from your web browser.
  
 ## Hints
