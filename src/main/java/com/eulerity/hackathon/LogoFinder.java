@@ -68,7 +68,7 @@ public class LogoFinder {
 		writer.close();
 		System.out.println(String.format("\n\nGenerated file:\n\n%s\n\n", outputFilename));
 	}
-
+	
 	private static final String ROW_FMT = "<tr><td>%s</td><td>%s</td><td><img src=\"%s\"></td></tr>";
 	
 	private static final String HTML_HEAD = "<html><head></head><body>\n" + 
