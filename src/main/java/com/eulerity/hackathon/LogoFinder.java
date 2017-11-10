@@ -4,6 +4,18 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.imageio.ImageIO;
+import javax.imageio.ImageReader;
+import javax.swing.text.Document;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Attribute;
+import org.jsoup.nodes.Element;
 
 public class LogoFinder {
 
@@ -23,13 +35,43 @@ public class LogoFinder {
 	 * @throws Exception
 	 */
 	public static String findLogoUrl(String url) throws Exception {
-
-		//
-		//   YOUR CODE HERE!
-		//
-		//
 		
-		return url + "/logo.png";
+		org.jsoup.nodes.Document doc = Jsoup.connect(url).get();
+		List<Element> metaElements = doc.getElementsByTag("meta");
+		List<Element> imgElements = doc.getElementsByTag("img");
+		List<Element> elements = doc.getAllElements();
+		List<String> results = new ArrayList<String>();
+		for(Element e: imgElements) {
+			for(Attribute a: e.attributes()) {
+				if(a.getValue().toLowerCase().contains("logo")) {
+					String logo  = e.attributes().get("src");
+					if(!logo.substring(0,4).equals("http"))
+						if(logo.contains(".com"))
+							logo = "http:" + logo;
+						else
+							logo = url+logo;
+					if(logo.contains("main"))
+						results.add(0, logo);
+					else
+						results.add(logo);
+				}
+			}
+		}
+		if(results.size()>0)
+			return results.get(0);
+		for(Element e: metaElements) {
+			if(e.attributes().get("property").equals("og:image"))
+				return e.attributes().get("content");
+		}
+		for(Element e: elements) {
+			for(Attribute a: e.attributes()) {
+				if(a.getValue().toLowerCase().contains("logo") && a.getValue().contains("http")) {
+					String logo = a.getValue().substring(a.getValue().indexOf("http"), a.getValue().length()-2);
+					return logo;
+				}
+			}
+		}
+		return url;
 	}
 	
 	
